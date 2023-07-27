@@ -17,7 +17,15 @@ spec:
         branch: tap
   build:
     env:
+    - name: BP_JVM_VERSION
+      value: "17"
     - name: BP_MAVEN_BUILT_ARTIFACT
-      value: func.yaml target/quarkus-app/lib/ target/quarkus-app/*.jar target/quarkus-app/app/ target/quarkus-app/quarkus/
+      value: "target/quarkus-app/lib/ target/quarkus-app/*.jar target/quarkus-app/app/ target/quarkus-app/quarkus/"
     - name: BP_MAVEN_BUILD_ARGUMENTS
       value: package -DskipTests=true -Dmaven.javadoc.skip=true -Dquarkus.package.type=fast-jar
+  serviceClaims:
+    - name: postgres-db
+      ref:
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ClassClaim
+        name: psql-claim-4

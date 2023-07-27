@@ -67,7 +67,10 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-kubernetes</artifactId>
     </dependency>
-
+    <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-kubernetes-service-binding</artifactId>
+    </dependency>
     <!-- Webjars -->
     <dependency>
       <groupId>io.quarkus</groupId>
