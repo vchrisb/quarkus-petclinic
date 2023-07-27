@@ -28,4 +28,4 @@ spec:
       ref:
         apiVersion: services.apps.tanzu.vmware.com/v1alpha1
         kind: ClassClaim
-        name: psql-claim-4
+        name: psql-claim-5
